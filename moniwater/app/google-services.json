@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "831764431956",
+    "firebase_url": "https://water2-b889b.firebaseio.com",
+    "project_id": "water2-b889b",
+    "storage_bucket": "water2-b889b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831764431956:android:cf78e74fc2d8b567",
+        "android_client_info": {
+          "package_name": "com.example.durand.watermonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831764431956-0vltdbla8i83bqp3786qblkb239tr0nm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.durand.watermonitor",
+            "certificate_hash": "bad9907559a08c51fa8422204d53e32e0e585901"
+          }
+        },
+        {
+          "client_id": "831764431956-t4okki3jlk0hlq24i0s5f5g9m84obehf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHAY09DF7QpcPfgoyxC2qvCkNXQu5JOfk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831764431956-t4okki3jlk0hlq24i0s5f5g9m84obehf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
