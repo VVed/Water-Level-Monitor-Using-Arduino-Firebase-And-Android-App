@@ -1,19 +1,14 @@
 #include <SPI.h>
-
 #include <Ethernet.h>
 #include <EthernetClient.h>
 #include <EthernetServer.h>
-
-
 
 int trig = 8;
 int echo = 3;
 int flag=1;
 float t = 0, h = 0;
-
 byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x02 };
 byte ip[]={192,168,137,1};
-
 EthernetClient client;
 //EthernetServer fcmServer(80);
 
@@ -35,9 +30,7 @@ void loop(){
   digitalWrite(trig, HIGH);
   delayMicroseconds(10);
   digitalWrite(trig, LOW);
-  
   t = pulseIn(echo, HIGH);
-  
   h = t*0.034/2;
   if(h>10 && flag==1){
     flag=0;
@@ -51,42 +44,25 @@ void loop(){
 }
 
 void sendDataToFirebase() {
-
-    String data ="dpmKOgBeOq8:APA91bGFCma1BVMNj1yKXWC1p-z5gQSMgORlD1W3BMLoye-YbCLWR284cua7wIEdowIQRAOYvG5Rh_-xpOffPmgxRJi1vtjo5ojiT5WnUzsZ3zM7fHy66x0o73zlnEAhQyXtEojyVaLk";
-
-
+    //String data ="******"; /* your device id goes here */
     Serial.println("Send data...");
-    int value= client.connect("aquassl.000webhostapp.com", 80);
+    int value= client.connect("yourwebsitename.000webhostapp.com", 80);
     Serial.println(value);
     if (value) {
-
         Serial.println("Connected to the server..\n");
         //String d=String(data.length());
-        client.print("GET /aqua1.php?id=dpmKOgBeOq8:APA91bGFCma1BVMNj1yKXWC1p-z5gQSMgORlD1W3BMLoye-YbCLWR284cua7wIEdowIQRAOYvG5Rh_-xpOffPmgxRJi1vtjo5ojiT5WnUzsZ3zM7fHy66x0o73zlnEAhQyXtEojyVaLk HTTP/1.1\r\n"); 
-
-        client.print("Host: aquassl.000webhostapp.com\r\n");
-        
-        //client.println("Accept:*"+"/"+"*");
-        //client.println("Content-Length:"+d);
-     // client.println("Content-Type: text/plain");
-      client.print("Connection: close\r\n");
-      client.println();
-      while(client.connected()) {
-  while(client.available()) {
-    Serial.write(client.read());
-    delay(100);
-  }
-}
-        //client.print("\n");
-
-       // client.print(data);
-
+        client.print("GET /aqua1.php?id=******* HTTP/1.1\r\n"); /* your device id goes here */
+        client.print("Host: yourwebsitename.000webhostapp.com\r\n");
+        client.print("Connection: close\r\n");
+        client.println();
+        while(client.connected()) {
+              while(client.available()) {
+                       Serial.write(client.read());
+                       delay(100);
+              }
+        }
     }
-
     Serial.println("Finished!");
-
     client.flush();
-
     client.stop();
-
 }
