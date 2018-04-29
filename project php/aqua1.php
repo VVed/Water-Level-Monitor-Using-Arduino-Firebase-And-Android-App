@@ -1,6 +1,6 @@
 <?php
 #API access key from Google API's Console
-    define( 'API_ACCESS_KEY', 'AAAAwakGBFQ:APA91bFJKSuxomsT-BBbxhrfIZmmqdM7O1pHDNrU3kpiSr_fR7A3-tHFMHEVS0CwnQXqzKLwcavj4gyVjA0ZOQL1XMbdwa5CqP7bAxrujAcur0MaMxaRM5-9XHjJZJu5DjOmvqPeqvgv' );
+    define( 'API_ACCESS_KEY', '*****' ); /* ***** is your server key of firebase */
     $registrationIds = $_GET['id'];
 #prep the bundle
      $msg = array
